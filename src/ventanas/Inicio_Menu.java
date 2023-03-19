@@ -10,6 +10,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  * @author Esteban Jose Julian
@@ -60,10 +61,12 @@ public class Inicio_Menu extends javax.swing.JFrame {
         label_signoPeso = new javax.swing.JLabel();
         label_igual = new javax.swing.JLabel();
         boton_Dollar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        boton_Euro = new javax.swing.JButton();
+        boton_Yuan = new javax.swing.JButton();
         label_copy = new javax.swing.JLabel();
         label_resultado = new javax.swing.JLabel();
+        comboBox_Select = new javax.swing.JComboBox<>();
+        boton_Covertir = new javax.swing.JButton();
         label_wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,10 +77,10 @@ public class Inicio_Menu extends javax.swing.JFrame {
         label_logo.setBackground(new java.awt.Color(255, 102, 102));
         getContentPane().add(label_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 130, 130));
 
-        label_Cantidad.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        label_Cantidad.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
         label_Cantidad.setForeground(new java.awt.Color(0, 0, 0));
-        label_Cantidad.setText("Inserta la cantidad a Convertir");
-        getContentPane().add(label_Cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+        label_Cantidad.setText("Ingresa la cantidad a Convertir y selecciona la moneda");
+        getContentPane().add(label_Cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, -1, -1));
 
         txt_Cantidad.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         txt_Cantidad.setForeground(new java.awt.Color(255, 0, 51));
@@ -108,25 +111,36 @@ public class Inicio_Menu extends javax.swing.JFrame {
         });
         getContentPane().add(boton_Dollar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 100, 90));
 
-        jButton2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(204, 0, 102));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/euro.png"))); // NOI18N
-        jButton2.setText("Euro");
-        jButton2.setBorder(null);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 100, 90));
+        boton_Euro.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        boton_Euro.setForeground(new java.awt.Color(204, 0, 102));
+        boton_Euro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/euro.png"))); // NOI18N
+        boton_Euro.setText("Euro");
+        boton_Euro.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        boton_Euro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        boton_Euro.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        boton_Euro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_EuroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boton_Euro, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 100, 90));
 
-        jButton3.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(204, 0, 102));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/yuan.png"))); // NOI18N
-        jButton3.setText("Yuan");
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 100, 90));
+        boton_Yuan.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        boton_Yuan.setForeground(new java.awt.Color(204, 0, 102));
+        boton_Yuan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/yuan.png"))); // NOI18N
+        boton_Yuan.setText("Yuan");
+        boton_Yuan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        boton_Yuan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        boton_Yuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_YuanActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boton_Yuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 100, 90));
 
+        label_copy.setForeground(new java.awt.Color(0, 51, 51));
         label_copy.setText("Diseñado por: Jose Julian Esteban");
-        getContentPane().add(label_copy, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 620, -1));
+        getContentPane().add(label_copy, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 620, -1));
 
         label_resultado.setBackground(new java.awt.Color(204, 204, 204));
         label_resultado.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
@@ -135,6 +149,20 @@ public class Inicio_Menu extends javax.swing.JFrame {
         label_resultado.setText("2000");
         label_resultado.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(label_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 140, 60));
+
+        comboBox_Select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OTHER(Selecciona)", "EUR - Euro", "USD - Dolar US", "PHP - Peso filipino", "BTC - Bitcoin", "por - Rublo bielorruso", "BYR - Rublo bielorruso (anterior a 2016)", "USD - Dólar de Belice", "CLP - peso chileno", "HKD - Dolar de Hong Kong", "IQD - Dinar iraquí", "KPW - Won norcoreano", "KRW - Won surcoreano", "KWD - dinar kuwaití", "LBP - Libra libanesa", "NAD - dólar namibio", "NGN - naira nigeriana", "ZAR - Rand sudafricano" }));
+        getContentPane().add(comboBox_Select, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, -1, -1));
+
+        boton_Covertir.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        boton_Covertir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/convert.png"))); // NOI18N
+        boton_Covertir.setText("Convertir");
+        boton_Covertir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        boton_Covertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_CovertirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boton_Covertir, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 140, 40));
         getContentPane().add(label_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));
 
         pack();
@@ -142,22 +170,137 @@ public class Inicio_Menu extends javax.swing.JFrame {
 
     private void boton_DollarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_DollarActionPerformed
         String cantidadConvertir = txt_Cantidad.getText().trim();
-        double conversion = 0;
-
+        double mx_Cant = 0;
         try {
-            double cantidadEnPesosMexicanos = Double.parseDouble(cantidadConvertir);
-            API_Conversor conversor = new API_Conversor();
-            conversion = conversor.cantidadAConvertir(cantidadEnPesosMexicanos, "USD");
+            mx_Cant = Double.parseDouble(cantidadConvertir);
         } catch (NumberFormatException e) {
-            // El texto de la variable cantidadConvertir no se pudo convertir en double
-            // Aquí puedes manejar este error como prefieras
+            System.err.println("Error al convertir a double\n" + e);
+            JOptionPane.showMessageDialog(null, "Ingrese una cantidad valida \n * Mayor a 0\n ");
         }
 
-        String resultado = String.format("%.2f", conversion);
-        label_igual.setText("=");
-        label_resultado.setText(resultado);
-
+        double conversion = 0;
+        if (cantidadConvertir != null && mx_Cant > 0) {
+            try {
+                API_Conversor conversor = new API_Conversor();
+                conversion = conversor.cantidadAConvertir(mx_Cant, "USD");
+            } catch (NumberFormatException e) {
+                System.err.println("Error al convertir\n" + e);
+            }
+            String resultado = String.format("%.2f", conversion);
+            label_igual.setText("=");
+            label_resultado.setText(resultado);
+        } else {
+            if (cantidadConvertir == "") {
+                JOptionPane.showMessageDialog(null, "Ingrese un una cantidad mayor a 0");
+            } else if (mx_Cant <= 0) {
+                JOptionPane.showMessageDialog(null, "Ingrese una cantidad mayor a 0");
+            }
+        }
     }//GEN-LAST:event_boton_DollarActionPerformed
+
+    private void boton_CovertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_CovertirActionPerformed
+        String codigoCombo = (String) comboBox_Select.getSelectedItem();
+        String codigo = codigoCombo.substring(0, 3);
+        String verificar ="";
+
+        if ((String) comboBox_Select.getSelectedItem() != "OTHER(Selecciona)") {
+
+            String cantidadConvertir = txt_Cantidad.getText().trim();
+            verificar = cantidadConvertir;
+            double mx_Cant = 0;
+            try {
+                mx_Cant = Double.parseDouble(cantidadConvertir);
+            } catch (NumberFormatException e) {
+                System.err.println("Error al convertir a double\n" + e);
+                JOptionPane.showMessageDialog(null, "Ingrese una cantidad valida \n * Mayor a 0\n ");
+            }
+
+            double conversion = 0;
+            if (cantidadConvertir != null && mx_Cant > 0) {
+                try {
+                    API_Conversor conversor = new API_Conversor();
+                    conversion = conversor.cantidadAConvertir(mx_Cant, codigo);
+                } catch (NumberFormatException e) {
+                    System.err.println("Error al convertir\n" + e);
+                }
+                String resultado = String.format("%.2f", conversion);
+                label_igual.setText("=");
+                label_resultado.setText(resultado);
+            } else {
+                if (cantidadConvertir == "" && mx_Cant != 0) {
+                    JOptionPane.showMessageDialog(null, "Ingrese un una cantidad mayor a 0");
+                } else if (mx_Cant <= 0) {
+                    JOptionPane.showMessageDialog(null, "Ingrese una cantidad mayor a 0");
+                }
+            }
+        } else {
+            if(verificar == ""){
+                JOptionPane.showMessageDialog(null, "Seleccione una opcion valida\ne\n Ingrese una cantidad mayor a 0\n");
+            }else {
+                JOptionPane.showMessageDialog(null, "Seleccione una opcion Valida");
+            }            
+        }
+    }//GEN-LAST:event_boton_CovertirActionPerformed
+
+    private void boton_EuroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_EuroActionPerformed
+        String cantidadConvertir = txt_Cantidad.getText().trim();
+        double mx_Cant = 0;
+        try {
+            mx_Cant = Double.parseDouble(cantidadConvertir);
+        } catch (NumberFormatException e) {
+            System.err.println("Error al convertir a double\n" + e);
+            JOptionPane.showMessageDialog(null, "Ingrese una cantidad valida \n * Mayor a 0\n ");
+        }
+
+        double conversion = 0;
+        if (cantidadConvertir != null && mx_Cant > 0) {
+            try {
+                API_Conversor conversor = new API_Conversor();
+                conversion = conversor.cantidadAConvertir(mx_Cant, "EUR");
+            } catch (NumberFormatException e) {
+                System.err.println("Error al convertir\n" + e);
+            }
+            String resultado = String.format("%.2f", conversion);
+            label_igual.setText("=");
+            label_resultado.setText(resultado);
+        } else {
+            if (cantidadConvertir == "" && mx_Cant != 0) {
+                JOptionPane.showMessageDialog(null, "Ingrese un una cantidad mayor a 0");
+            } else if (mx_Cant <= 0) {
+                JOptionPane.showMessageDialog(null, "Ingrese una cantidad mayor a 0");
+            }
+        }
+    }//GEN-LAST:event_boton_EuroActionPerformed
+
+    private void boton_YuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_YuanActionPerformed
+        String cantidadConvertir = txt_Cantidad.getText().trim();
+        double mx_Cant = 0;
+        try {
+            mx_Cant = Double.parseDouble(cantidadConvertir);
+        } catch (NumberFormatException e) {
+            System.err.println("Error al convertir a double\n" + e);
+            JOptionPane.showMessageDialog(null, "Ingrese una cantidad valida \n * Mayor a 0\n ");
+        }
+
+        double conversion = 0;
+        if (cantidadConvertir != null && mx_Cant > 0) {
+            try {
+                API_Conversor conversor = new API_Conversor();
+                conversion = conversor.cantidadAConvertir(mx_Cant, "CNY");
+            } catch (NumberFormatException e) {
+                System.err.println("Error al convertir\n" + e);
+            }
+            String resultado = String.format("%.2f", conversion);
+            label_igual.setText("=");
+            label_resultado.setText(resultado);
+        } else {
+            if (cantidadConvertir == "") {
+                JOptionPane.showMessageDialog(null, "Ingrese un una cantidad mayor a 0");
+            } else if (mx_Cant <= 0) {
+                JOptionPane.showMessageDialog(null, "Ingrese una cantidad mayor a 0");
+            }
+        }
+    }//GEN-LAST:event_boton_YuanActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -186,9 +329,11 @@ public class Inicio_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_Covertir;
     private javax.swing.JButton boton_Dollar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton boton_Euro;
+    private javax.swing.JButton boton_Yuan;
+    private javax.swing.JComboBox<String> comboBox_Select;
     private javax.swing.JLabel label_Cantidad;
     private javax.swing.JLabel label_copy;
     private javax.swing.JLabel label_igual;
