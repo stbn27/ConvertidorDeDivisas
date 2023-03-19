@@ -23,7 +23,7 @@ public class Inicio_Menu extends javax.swing.JFrame {
         //Codigo para la ventana:
         setSize(700, 450);  //Tamaño de la ventana
         setResizable(false);    //No maximizar la ventana
-        setTitle("Conversor de monedas");
+        setTitle("Conversor de monedas Nacional MX");
         setLocationRelativeTo(null);    //Iniciar la ventana en el centro.
 
         //Fondo de la ventana:
@@ -151,7 +151,7 @@ public class Inicio_Menu extends javax.swing.JFrame {
         getContentPane().add(label_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 140, 60));
 
         comboBox_Select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OTHER(Selecciona)", "EUR - Euro", "USD - Dolar US", "PHP - Peso filipino", "BTC - Bitcoin", "por - Rublo bielorruso", "BYR - Rublo bielorruso (anterior a 2016)", "USD - Dólar de Belice", "CLP - peso chileno", "HKD - Dolar de Hong Kong", "IQD - Dinar iraquí", "KPW - Won norcoreano", "KRW - Won surcoreano", "KWD - dinar kuwaití", "LBP - Libra libanesa", "NAD - dólar namibio", "NGN - naira nigeriana", "ZAR - Rand sudafricano" }));
-        getContentPane().add(comboBox_Select, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, -1, -1));
+        getContentPane().add(comboBox_Select, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, -1, -1));
 
         boton_Covertir.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         boton_Covertir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/convert.png"))); // NOI18N
@@ -162,8 +162,8 @@ public class Inicio_Menu extends javax.swing.JFrame {
                 boton_CovertirActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_Covertir, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 140, 40));
-        getContentPane().add(label_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));
+        getContentPane().add(boton_Covertir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 140, 40));
+        getContentPane().add(label_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 700, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
