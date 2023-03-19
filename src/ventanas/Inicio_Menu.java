@@ -55,6 +55,7 @@ public class Inicio_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_resultado = new javax.swing.JLabel();
         label_logo = new javax.swing.JLabel();
         label_Cantidad = new javax.swing.JLabel();
         txt_Cantidad = new javax.swing.JTextField();
@@ -64,7 +65,6 @@ public class Inicio_Menu extends javax.swing.JFrame {
         boton_Euro = new javax.swing.JButton();
         boton_Yuan = new javax.swing.JButton();
         label_copy = new javax.swing.JLabel();
-        label_resultado = new javax.swing.JLabel();
         comboBox_Select = new javax.swing.JComboBox<>();
         boton_Covertir = new javax.swing.JButton();
         label_wallpaper = new javax.swing.JLabel();
@@ -73,6 +73,14 @@ public class Inicio_Menu extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 255, 255));
         setIconImage(getIconImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_resultado.setBackground(new java.awt.Color(255, 255, 255));
+        label_resultado.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        label_resultado.setForeground(new java.awt.Color(0, 51, 153));
+        label_resultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_resultado.setText("2000");
+        label_resultado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(label_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 140, 60));
 
         label_logo.setBackground(new java.awt.Color(255, 102, 102));
         getContentPane().add(label_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 130, 130));
@@ -142,14 +150,6 @@ public class Inicio_Menu extends javax.swing.JFrame {
         label_copy.setText("Diseñado por: Jose Julian Esteban");
         getContentPane().add(label_copy, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 620, -1));
 
-        label_resultado.setBackground(new java.awt.Color(204, 204, 204));
-        label_resultado.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        label_resultado.setForeground(new java.awt.Color(0, 51, 153));
-        label_resultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_resultado.setText("2000");
-        label_resultado.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(label_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 140, 60));
-
         comboBox_Select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OTHER(Selecciona)", "EUR - Euro", "USD - Dolar US", "PHP - Peso filipino", "BTC - Bitcoin", "por - Rublo bielorruso", "BYR - Rublo bielorruso (anterior a 2016)", "USD - Dólar de Belice", "CLP - peso chileno", "HKD - Dolar de Hong Kong", "IQD - Dinar iraquí", "KPW - Won norcoreano", "KRW - Won surcoreano", "KWD - dinar kuwaití", "LBP - Libra libanesa", "NAD - dólar namibio", "NGN - naira nigeriana", "ZAR - Rand sudafricano" }));
         getContentPane().add(comboBox_Select, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, -1, -1));
 
@@ -163,7 +163,7 @@ public class Inicio_Menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(boton_Covertir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 140, 40));
-        getContentPane().add(label_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 700, 450));
+        getContentPane().add(label_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -190,10 +190,8 @@ public class Inicio_Menu extends javax.swing.JFrame {
             label_igual.setText("=");
             label_resultado.setText(resultado);
         } else {
-            if (cantidadConvertir == "") {
-                JOptionPane.showMessageDialog(null, "Ingrese un una cantidad mayor a 0");
-            } else if (mx_Cant <= 0) {
-                JOptionPane.showMessageDialog(null, "Ingrese una cantidad mayor a 0");
+            if (cantidadConvertir == "" || mx_Cant <= 0) {
+                //JOptionPane.showMessageDialog(null, "Ingrese un una cantidad mayor a 0");
             }
         }
     }//GEN-LAST:event_boton_DollarActionPerformed
@@ -201,7 +199,7 @@ public class Inicio_Menu extends javax.swing.JFrame {
     private void boton_CovertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_CovertirActionPerformed
         String codigoCombo = (String) comboBox_Select.getSelectedItem();
         String codigo = codigoCombo.substring(0, 3);
-        String verificar ="";
+        String verificar = "";
 
         if ((String) comboBox_Select.getSelectedItem() != "OTHER(Selecciona)") {
 
@@ -234,11 +232,11 @@ public class Inicio_Menu extends javax.swing.JFrame {
                 }
             }
         } else {
-            if(verificar == ""){
+            if (verificar == "") {
                 JOptionPane.showMessageDialog(null, "Seleccione una opcion valida\ne\n Ingrese una cantidad mayor a 0\n");
-            }else {
+            } else {
                 JOptionPane.showMessageDialog(null, "Seleccione una opcion Valida");
-            }            
+            }
         }
     }//GEN-LAST:event_boton_CovertirActionPerformed
 
