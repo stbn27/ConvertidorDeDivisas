@@ -1,5 +1,7 @@
-/build
+/build/
 /manifest.mf
 /dist/
 /test/
 /code.txt
+build.xml
+manifest.mf
