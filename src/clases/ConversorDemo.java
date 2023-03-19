@@ -10,7 +10,7 @@ package clases;
  * @author Willy Stbn
  */
 
-public class Conversor {
+public class ConversorDemo {
     public double cantidadAConvertir(double cantidadEnPesosMexicanos) {
         // Aquí puedes utilizar un API para obtener la tasa de cambio actualizada
         double tasaDeCambio = obtenerTasaDeCambio();

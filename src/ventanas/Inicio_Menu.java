@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import clases.API_Conversor;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.Icon;
@@ -17,37 +18,36 @@ public class Inicio_Menu extends javax.swing.JFrame {
 
     public Inicio_Menu() {
         initComponents();
-        
+
         //Codigo para la ventana:
         setSize(700, 450);  //Tamaño de la ventana
         setResizable(false);    //No maximizar la ventana
         setTitle("Conversor de monedas");
         setLocationRelativeTo(null);    //Iniciar la ventana en el centro.
-        
+
         //Fondo de la ventana:
         ImageIcon wallapaper = new ImageIcon("src/images/wallpaper.jpg");
         Icon icono = new ImageIcon(wallapaper.getImage().getScaledInstance(label_wallpaper.getWidth(), label_wallpaper.getHeight(), Image.SCALE_DEFAULT));
         label_wallpaper.setIcon(icono);
         this.repaint();
-        
+
         //Logo de la ventana
         ImageIcon wallpaperLogo = new ImageIcon("src/images/mx.png");
         Icon iconoLogo = new ImageIcon(wallpaperLogo.getImage().getScaledInstance(label_logo.getWidth(), label_logo.getHeight(), Image.SCALE_DEFAULT));
         label_logo.setIcon(iconoLogo);
         this.repaint();
-        
+
         //Valores de las variables por decto:
         label_igual.setText("");
         label_resultado.setText("");
-        
+
     }
-    
-    
+
     //Icono del programa(ventana)
     @Override
-    public Image getIconImage(){
+    public Image getIconImage() {
         Image iconoVentana = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
-        return  iconoVentana;
+        return iconoVentana;
     }
 
     @SuppressWarnings("unchecked")
@@ -141,7 +141,22 @@ public class Inicio_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_DollarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_DollarActionPerformed
-        // TODO add your handling code here:
+        String cantidadConvertir = txt_Cantidad.getText().trim();
+        double conversion = 0;
+
+        try {
+            double cantidadEnPesosMexicanos = Double.parseDouble(cantidadConvertir);
+            API_Conversor conversor = new API_Conversor();
+            conversion = conversor.cantidadAConvertir(cantidadEnPesosMexicanos, "USD");
+        } catch (NumberFormatException e) {
+            // El texto de la variable cantidadConvertir no se pudo convertir en double
+            // Aquí puedes manejar este error como prefieras
+        }
+
+        String resultado = String.format("%.2f", conversion);
+        label_igual.setText("=");
+        label_resultado.setText(resultado);
+
     }//GEN-LAST:event_boton_DollarActionPerformed
 
     public static void main(String args[]) {
@@ -162,7 +177,6 @@ public class Inicio_Menu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Inicio_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

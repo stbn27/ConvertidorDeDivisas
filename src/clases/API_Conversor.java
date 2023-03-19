@@ -14,18 +14,17 @@ import org.json.JSONObject;
 /**
  * @author Willy Stbn
  */
-
 public class API_Conversor {
 
-    private static final String API_KEY = "TU_API_KEY";
+    private static final String API_KEY = "d5c7b98b48ec4c94bb4bb0ef87934bf2";
     private static final String BASE_URL = "https://openexchangerates.org/api/latest.json?app_id=" + API_KEY;
 
-    public double cantidadAConvertir(double cantidadEnPesosMexicanos) {
-        double tasaDeCambio = obtenerTasaDeCambio();
-        return cantidadEnPesosMexicanos * tasaDeCambio;
+    public double cantidadAConvertir(double MX, String codigoMoneda) {
+        double tasaDeCambio = obtenerTasaDeCambio(codigoMoneda);
+        return MX * tasaDeCambio;
     }
 
-    private double obtenerTasaDeCambio() {
+    private double obtenerTasaDeCambio(String codigoMoneda) {
         try {
             URL url = new URL(BASE_URL);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -42,8 +41,9 @@ public class API_Conversor {
             JSONObject jsonContent = new JSONObject(content.toString());
             JSONObject rates = jsonContent.getJSONObject("rates");
             double usdToMxnRate = rates.getDouble("MXN");
+            double usdToTargetRate = rates.getDouble(codigoMoneda);
 
-            return 1 / usdToMxnRate;
+            return usdToTargetRate / usdToMxnRate;
         } catch (Exception e) {
             e.printStackTrace();
         }
