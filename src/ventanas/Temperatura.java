@@ -108,12 +108,11 @@ public class Temperatura extends javax.swing.JFrame {
         txt_CantidadC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(txt_CantidadC, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 130, 90));
 
-        label_ResultadoTN.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
+        label_ResultadoTN.setFont(new java.awt.Font("DialogInput", 1, 28)); // NOI18N
         label_ResultadoTN.setForeground(new java.awt.Color(102, 204, 0));
         label_ResultadoTN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_ResultadoTN.setText("000");
         label_ResultadoTN.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(label_ResultadoTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 130, 90));
+        getContentPane().add(label_ResultadoTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 210, 90));
 
         combo_Local.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         combo_Local.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "° C", "° F", "° K" }));
@@ -189,7 +188,7 @@ public class Temperatura extends javax.swing.JFrame {
             } else if (unidad1.equals("C") && unidad2.equals("F")){
                 
                 label_ResultadoTN.setText(String.valueOf(conversor.celsiusAFahrenheit(temp)));
-            }else if (unidad1.equals("C") && unidad2.equals("F")){
+            }else if (unidad1.equals("C") && unidad2.equals("K")){
                 
                 label_ResultadoTN.setText(String.valueOf(conversor.celsiusAKelvin(temp)));
             }else if(unidad1.equals("F") && unidad2.equals("C")){
