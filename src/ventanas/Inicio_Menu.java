@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 /**
  * @author Esteban Jose Julian
@@ -25,6 +26,9 @@ public class Inicio_Menu extends javax.swing.JFrame {
         setResizable(false);    //No maximizar la ventana
         setTitle("Conversor de monedas Nacional MX");
         setLocationRelativeTo(null);    //Iniciar la ventana en el centro.
+        
+        //No ejecutar la ventan despues de cerrar
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         //Fondo de la ventana:
         ImageIcon wallapaper = new ImageIcon("src/images/wallpaper.jpg");
@@ -67,7 +71,11 @@ public class Inicio_Menu extends javax.swing.JFrame {
         label_copy = new javax.swing.JLabel();
         comboBox_Select = new javax.swing.JComboBox<>();
         boton_Covertir = new javax.swing.JButton();
+        boton_ConUniver = new javax.swing.JButton();
+        boton_ConUniver1 = new javax.swing.JButton();
+        boton_Nacional = new javax.swing.JButton();
         label_wallpaper = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 255));
@@ -163,7 +171,28 @@ public class Inicio_Menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(boton_Covertir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 140, 40));
+
+        boton_ConUniver.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        boton_ConUniver.setForeground(new java.awt.Color(102, 51, 0));
+        boton_ConUniver.setText("Convertidor Universal $");
+        boton_ConUniver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_ConUniverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boton_ConUniver, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 200, -1));
+
+        boton_ConUniver1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        boton_ConUniver1.setForeground(new java.awt.Color(102, 51, 0));
+        boton_ConUniver1.setText("Convertidor Temperatura");
+        getContentPane().add(boton_ConUniver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 200, -1));
+
+        boton_Nacional.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        boton_Nacional.setForeground(new java.awt.Color(102, 51, 0));
+        boton_Nacional.setText("Convertidor Nacional $");
+        getContentPane().add(boton_Nacional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, -1));
         getContentPane().add(label_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 700, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -300,6 +329,11 @@ public class Inicio_Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_boton_YuanActionPerformed
 
+    private void boton_ConUniverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ConUniverActionPerformed
+        dispose();
+        new UniConv().setVisible(true);
+    }//GEN-LAST:event_boton_ConUniverActionPerformed
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -327,11 +361,15 @@ public class Inicio_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_ConUniver;
+    private javax.swing.JButton boton_ConUniver1;
     private javax.swing.JButton boton_Covertir;
     private javax.swing.JButton boton_Dollar;
     private javax.swing.JButton boton_Euro;
+    private javax.swing.JButton boton_Nacional;
     private javax.swing.JButton boton_Yuan;
     private javax.swing.JComboBox<String> comboBox_Select;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel label_Cantidad;
     private javax.swing.JLabel label_copy;
     private javax.swing.JLabel label_igual;
