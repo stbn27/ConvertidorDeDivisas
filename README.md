@@ -29,8 +29,8 @@ El proyecto contiene tres clases donde viene la logica de los conversores y otra
 #####  Ejemlo de uso: Convertir 45 grados Centigrados a Kelvin:
 ![alt tag](/img_proyect/usotemperatura.png)
  
-######  Cualquier sugerencia o mejora al proyecto puede contactarme.:tw-1f4ac:
-:tw-1f4ab: :tw-2b50:
+######  Cualquier sugerencia o mejora al proyecto puede contactarme.:
+
 
 ![alt tag](/img_proyect/concluido.png)
 
