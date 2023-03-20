@@ -94,6 +94,7 @@ public class Nacional extends javax.swing.JFrame {
         getContentPane().add(label_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 140, 60));
 
         label_logo.setBackground(new java.awt.Color(255, 102, 102));
+        label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mx.png"))); // NOI18N
         getContentPane().add(label_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 130, 130));
 
         label_Cantidad.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 15)); // NOI18N
@@ -107,6 +108,7 @@ public class Nacional extends javax.swing.JFrame {
         getContentPane().add(txt_Cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 170, 60));
 
         label_signoPeso.setFont(new java.awt.Font("Cooper Black", 1, 28)); // NOI18N
+        label_signoPeso.setForeground(new java.awt.Color(153, 51, 0));
         label_signoPeso.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         label_signoPeso.setText("$");
         getContentPane().add(label_signoPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 30, 60));
@@ -199,6 +201,8 @@ public class Nacional extends javax.swing.JFrame {
         boton_Nacional.setForeground(new java.awt.Color(102, 51, 0));
         boton_Nacional.setText("Convertidor Nacional $");
         getContentPane().add(boton_Nacional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, -1));
+
+        label_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wallpaper.jpg"))); // NOI18N
         getContentPane().add(label_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 700, -1));
 

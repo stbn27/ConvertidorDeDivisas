@@ -143,6 +143,8 @@ public class Uiversal extends javax.swing.JFrame {
         label_footer.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         label_footer.setText("Diseñador por: Esteban Jose Julian");
         getContentPane().add(label_footer, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 200, -1));
+
+        label_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wallpaper.jpg"))); // NOI18N
         getContentPane().add(label_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));
 
         pack();

@@ -66,6 +66,7 @@ public class Temperatura extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         label_wallpaper = new javax.swing.JLabel();
+        label_copy = new javax.swing.JLabel();
 
         label_Animacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/termometro.gif"))); // NOI18N
         label_Animacion.setText("Animacion");
@@ -132,10 +133,12 @@ public class Temperatura extends javax.swing.JFrame {
         getContentPane().add(boton_ConvertirT, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 90, 70));
 
         jLabel3.setFont(new java.awt.Font("OCR A Extended", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Elege las escalas de temperatura:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 410, -1));
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("a");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 60, 50));
@@ -144,7 +147,13 @@ public class Temperatura extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/term.gif"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 240, 420));
+
+        label_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wallpaper.jpg"))); // NOI18N
         getContentPane().add(label_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));
+
+        label_copy.setForeground(new java.awt.Color(0, 51, 51));
+        label_copy.setText("Diseñado por: Jose Julian Esteban");
+        getContentPane().add(label_copy, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 620, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -259,6 +268,7 @@ public class Temperatura extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel label_Animacion;
     private javax.swing.JLabel label_ResultadoTN;
+    private javax.swing.JLabel label_copy;
     private javax.swing.JLabel label_wallpaper;
     private javax.swing.JTextField txt_CantidadC;
     // End of variables declaration//GEN-END:variables
