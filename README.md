@@ -12,11 +12,12 @@ La interfaces graficas cuentan con validacion para solo aceptar cantidades posit
 El proyecto contiene tres clases donde viene la logica de los conversores y otras tres interfaces graficas, ademas en cada interfaz tiene botones para el usuario logre intercabiar entre cada una de ellas.
 
 #### Esta es la ventana principal donde viene el conversor de moneada Nacionl MXN:
-![Conversor Nacional MXN](https://trello.com/1/cards/6418b2e82983470528fe9eea/attachments/6418b2e82983470528fe9f16/previews/6418b2e92983470528fe9f26/download/image.png "Conversor Nacional MXN")
+![alt tag](/img_proyect/VentanaNacional.png)
+
  Incluye tres botones de las monedas extranjeras mas reconocidas y un selector donde incluyes otras monedas.
 ###  El campo de texto esta validado para que el usuario  no ingrese letras o cantidades negativas: 
  ![Validacion de datos](https://trello.com/1/cards/6418b2e82983470528fe9eea/attachments/6418b35c5cf531eb53b4c0ad/previews/6418b35d5cf531eb53b4c0e0/download/image.png "Validacion de datos")
- ### Ventana grafica de conversor Universal:
+ ### Ventana grafica de conversor Universal: 
  ![Conversor universal](https://trello.com/1/cards/6418b4c743244f9b2b9181d5/attachments/6418b4c8b54adb604ed1508d/previews/6418b4c9b54adb604ed1509d/download/image.png "Conversor universal")
  En esta ventana el usuario elige la moneda local e ingresa la cantidad para convertir, ademas de elegir la moneda a la que se desee convertir.
 #####  Ejemlo de uso: convertir 1 dolar a pesos mexicanos MXN:
