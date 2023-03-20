@@ -8,7 +8,6 @@ package ventanas;
 import clases.ConversorUniversal;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.Window;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -18,9 +17,9 @@ import javax.swing.WindowConstants;
  *
  * @author Willy Stbn
  */
-public class UniConv extends javax.swing.JFrame {
+public class Uiversal extends javax.swing.JFrame {
 
-    public UniConv() {
+    public Uiversal() {
         initComponents();
         
         //Codigo para la ventana:
@@ -95,6 +94,11 @@ public class UniConv extends javax.swing.JFrame {
         boton_ConUniver1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         boton_ConUniver1.setForeground(new java.awt.Color(102, 51, 0));
         boton_ConUniver1.setText("Convertidor Temperatura");
+        boton_ConUniver1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_ConUniver1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(boton_ConUniver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 0, 200, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 700, -1));
 
@@ -109,7 +113,7 @@ public class UniConv extends javax.swing.JFrame {
         getContentPane().add(txt_Cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 180, 50));
 
         combo_Convert.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        combo_Convert.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD - Dolar", "EUR - Euro", "PHP - Peso filipino", "BTC - Bitcoin", "por - Rublo bielorruso", "BYR - Rublo bielorruso (anterior a 2016)", "USD - Dólar de Belice", "CLP - peso chileno", "HKD - Dolar de Hong Kong", "IQD - Dinar iraquí", "KPW - Won norcoreano", "KRW - Won surcoreano", "KWD - dinar kuwaití", "LBP - Libra libanesa", "NAD - dólar namibio", "NGN - naira nigeriana", "ZAR - Rand sudafricano", "MXN - Peso Mexicano" }));
+        combo_Convert.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD - Dolar", "EUR - Euro", "MXN - Peso Mexicano", "PHP - Peso Filipino", "BTC - Bitcoin", "por - Rublo Bielorruso", "BYR - Rublo Bielorruso (anterior a 2016)", "USD - Dólar de Belice", "CLP - peso chileno", "HKD - Dolar de Hong Kong", "IQD - Dinar iraquí", "KPW - Won norcoreano", "KRW - Won surcoreano", "KWD - dinar kuwaití", "LBP - Libra libanesa", "NAD - dólar namibio", "NGN - naira nigeriana", "ZAR - Rand sudafricano", "MXN - Peso Mexicano" }));
         getContentPane().add(combo_Convert, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 180, 40));
 
         combo_Local.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -146,12 +150,12 @@ public class UniConv extends javax.swing.JFrame {
 
     private void boton_ConUniverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ConUniverActionPerformed
         dispose();
-        new UniConv().setVisible(true);
+        new Uiversal().setVisible(true);
     }//GEN-LAST:event_boton_ConUniverActionPerformed
 
     private void boton_NacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_NacionalActionPerformed
         dispose();
-        new Inicio_Menu().setVisible(true);
+        new Nacional().setVisible(true);
     }//GEN-LAST:event_boton_NacionalActionPerformed
 
     private void boton_ConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ConvertirActionPerformed
@@ -181,6 +185,11 @@ public class UniConv extends javax.swing.JFrame {
         
     }//GEN-LAST:event_boton_ConvertirActionPerformed
 
+    private void boton_ConUniver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ConUniver1ActionPerformed
+        dispose();        
+        new Temperatura().setVisible(true);
+    }//GEN-LAST:event_boton_ConUniver1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -198,20 +207,21 @@ public class UniConv extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UniConv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Uiversal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UniConv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Uiversal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UniConv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Uiversal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UniConv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Uiversal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UniConv().setVisible(true);
+                new Uiversal().setVisible(true);
             }
         });
     }

@@ -16,9 +16,9 @@ import javax.swing.WindowConstants;
 /**
  * @author Esteban Jose Julian
  */
-public class Inicio_Menu extends javax.swing.JFrame {
+public class Nacional extends javax.swing.JFrame {
 
-    public Inicio_Menu() {
+    public Nacional() {
         initComponents();
 
         //Codigo para la ventana:
@@ -45,6 +45,9 @@ public class Inicio_Menu extends javax.swing.JFrame {
         //Valores de las variables por decto:
         label_igual.setText("");
         label_resultado.setText("");
+        
+        //No ejecutar en segundo plano despues de cerrar la ventana
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
 
@@ -72,7 +75,7 @@ public class Inicio_Menu extends javax.swing.JFrame {
         comboBox_Select = new javax.swing.JComboBox<>();
         boton_Covertir = new javax.swing.JButton();
         boton_ConUniver = new javax.swing.JButton();
-        boton_ConUniver1 = new javax.swing.JButton();
+        boton_temperatura = new javax.swing.JButton();
         boton_Nacional = new javax.swing.JButton();
         label_wallpaper = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -182,10 +185,15 @@ public class Inicio_Menu extends javax.swing.JFrame {
         });
         getContentPane().add(boton_ConUniver, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 200, -1));
 
-        boton_ConUniver1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        boton_ConUniver1.setForeground(new java.awt.Color(102, 51, 0));
-        boton_ConUniver1.setText("Convertidor Temperatura");
-        getContentPane().add(boton_ConUniver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 200, -1));
+        boton_temperatura.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        boton_temperatura.setForeground(new java.awt.Color(102, 51, 0));
+        boton_temperatura.setText("Convertidor Temperatura");
+        boton_temperatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_temperaturaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boton_temperatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 200, -1));
 
         boton_Nacional.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         boton_Nacional.setForeground(new java.awt.Color(102, 51, 0));
@@ -331,8 +339,14 @@ public class Inicio_Menu extends javax.swing.JFrame {
 
     private void boton_ConUniverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ConUniverActionPerformed
         dispose();
-        new UniConv().setVisible(true);
+        new Uiversal().setVisible(true);
     }//GEN-LAST:event_boton_ConUniverActionPerformed
+
+    private void boton_temperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_temperaturaActionPerformed
+        dispose();        
+        new Temperatura().setVisible(true);
+    
+    }//GEN-LAST:event_boton_temperaturaActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -343,31 +357,32 @@ public class Inicio_Menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inicio_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Nacional.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inicio_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Nacional.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inicio_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Nacional.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inicio_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Nacional.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicio_Menu().setVisible(true);
+                new Nacional().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_ConUniver;
-    private javax.swing.JButton boton_ConUniver1;
     private javax.swing.JButton boton_Covertir;
     private javax.swing.JButton boton_Dollar;
     private javax.swing.JButton boton_Euro;
     private javax.swing.JButton boton_Nacional;
     private javax.swing.JButton boton_Yuan;
+    private javax.swing.JButton boton_temperatura;
     private javax.swing.JComboBox<String> comboBox_Select;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel label_Cantidad;

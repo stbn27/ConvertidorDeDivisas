@@ -3,8 +3,8 @@
  * Version: v.0.1
  * Proyecto: 
  */
-
 package clases;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -12,6 +12,7 @@ import java.net.URL;
 import org.json.JSONObject;
 
 public class ConversorUniversal {
+
     private static final String API_KEY = "d5c7b98b48ec4c94bb4bb0ef87934bf2";
     private static final String BASE_URL = "https://openexchangerates.org/api/latest.json?app_id=" + API_KEY;
 
@@ -42,12 +43,11 @@ public class ConversorUniversal {
             return usdToTargetRate / usdToOriginRate;
         } catch (Exception e) {
             e.printStackTrace();
+            System.err.println("Error al obtener tasa de cambio\n" + e);
         }
         return 0;
     }
 }
-
-
 
 //////////////////////////////////
 //AnyCurrency anyCurrency = new ConversorUniversal();

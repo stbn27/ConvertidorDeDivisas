@@ -46,6 +46,7 @@ public class API_Conversor {
             return usdToTargetRate / usdToMxnRate;
         } catch (Exception e) {
             e.printStackTrace();
+            System.err.println("Error al obtener tasa de cambio\n" + e);
         }
         return 0;
     }
